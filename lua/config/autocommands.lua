@@ -43,16 +43,3 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
-vim.api.nvim_create_autocmd("TabNewEntered", {
-  callback = open_terminal_in_tab,
-})
-
-vim.api.nvim_create_autocmd("WinEnter", {
-  callback = function()
-    if vim.bo.filetype == "terminal" then
-      vim.cmd("startinsert")
-    end
-  end,
-})
-
-

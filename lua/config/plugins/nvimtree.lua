@@ -31,7 +31,9 @@ vim.api.nvim_create_autocmd("BufEnter", {
         local is_draft = vim.fn.bufname("") == "" and vim.bo.buftype == ""
         
         if node and node.type == "file" then
-      
+          
+          api.tree.close()
+
           local current_buf = vim.api.nvim_get_current_buf()
           local buffers = vim.api.nvim_list_bufs()
 
@@ -57,6 +59,15 @@ vim.api.nvim_create_autocmd("BufEnter", {
         
         end
       end, { buffer = true })
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("TabLeave", {
+  callback = function()
+    local api = require("nvim-tree.api")
+    if api.tree.is_visible() then
+      api.tree.close()
     end
   end,
 })

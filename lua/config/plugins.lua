@@ -41,10 +41,16 @@ require("lazy").setup({
     end,
   },
   {
-  "windwp/nvim-autopairs",
-  event = "InsertEnter",
-  config = function()
-    require("nvim-autopairs").setup({})
-  end,
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-autopairs").setup({})
+    end,
+  },
+  {
+    "voldikss/vim-floaterm",
+    config = function()
+      require("config.plugins.floaterm")
+    end,
   },
 })
