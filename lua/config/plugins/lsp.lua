@@ -13,4 +13,13 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require("lspconfig").pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,
+  settings = {
+    python = {
+      analysis = {
+        diagnosticMode = "workspace",
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+      },
+    },
+  },
 })
