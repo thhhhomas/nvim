@@ -1,0 +1,13 @@
+# Arquivos de Swap e Backup do Neovim
+*.swp
+*.swo
+*~
+*.un~
+
+# Arquivos de sessão e histórico
+.Session.vim
+.netrwhist
+*undo.vim
+
+# Diretórios de dados (lazy.nvim e outros podem usar isso)
+.local/
