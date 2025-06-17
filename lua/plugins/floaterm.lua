@@ -21,5 +21,8 @@ return{
 
     -- Volta para o terminal anterior
     vim.keymap.set('t', '<F8>', '<C-\\><C-n><cmd>FloatermPrev<CR>')
+
+    -- Finaliza o terminal atual
+    vim.keymap.ser('t', '<F10>', '<C-\\><C-n><cmd>FloatermKill<CR>')
   end,
 }
