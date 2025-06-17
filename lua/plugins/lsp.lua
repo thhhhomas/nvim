@@ -29,15 +29,44 @@ return {
       local lspconfig = require('lspconfig')
 
       local servers = { 'lua_ls', 'pyright' }
+      local function get_python_path(workspace)
+        local venv_names = { 'venv', 'env', '.venv', '.env' }
+        for _, name in ipairs(venv_names) do
+          local python_path = workspace .. '/' .. name .. '/bin/python'
+          if vim.fn.executable(python_path) == 1 then
+            return python_path
+          end
+        end
+        return 'python'
+      end
 
       for _, server in ipairs(servers) do
-        lspconfig[server].setup {
-          on_attach = on_attach,
-          capabilities = capabilities,
-          flags = {
-            debounce_text_changes = 150,
-          },
-        }
+        if server == 'pyright' then
+          lspconfig[server].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            
+            settings = {
+              python = {
+                pythonPath = get_python_path(vim.fn.getcwd()),
+                analysis = {
+                  useLibraryCodeForTypes = true,
+                  autoSearchPaths = true,
+                  diagnosticMode = 'workspace',
+                  typeCheckingMode = 'off',
+                }
+              }
+            }
+          }
+        else
+          lspconfig[server].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            flags = {
+              debounce_text_changes = 150,
+            },
+          }
+        end
       end
     end,
   },
