@@ -4,4 +4,4 @@ Este repositório contém minhas configurações pessoais para o Neovim. O objet
 
 ## Visão Geral
 
-A estrutura de configuração é baseada em Lua e utiliza o `lazy.nvim` como gerenciador de plugins. A organização busca ser modular e de fácil manutenção, separando plugins, configurações e mapeamentos de teclas em arquivos distintos.
+A estrutura de configuração é baseada em Lua e utiliza o `lazy.nvim` como gerenciador de plugins. A organização busca ser modular e de fácil manutenção, separando plugins e configurações em arquivos distintos.
