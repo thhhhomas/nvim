@@ -28,7 +28,7 @@ return {
 
       local lspconfig = require('lspconfig')
 
-      local servers = { 'lua_ls', 'pyright' }
+      local servers = { 'lua_ls', 'pyright', 'omnisharp' }
       local function get_python_path(workspace)
         local venv_names = { 'venv', 'env', '.venv', '.env' }
         for _, name in ipairs(venv_names) do
@@ -58,6 +58,12 @@ return {
               }
             }
           }
+        elseif server == 'omnisharp' then
+          lspconfig[server].setup {
+            cmd = {'omnisharp', '--languageserver', '--hostPID', tostring(vim.fn.getpid()) },
+            capabilities = capabilities,
+          }
+
         else
           lspconfig[server].setup {
             on_attach = on_attach,
