@@ -4,10 +4,11 @@ return{
     "rcarriga/nvim-dap-ui",
     "williamboman/mason.nvim",
     "jay-babu/mason-nvim-dap.nvim",
+    "nvim-neotest/nvim-nio",
   },
   config = function()
     local dap = require("dap")
-    local dapui = require("dapiu")
+    local dapui = require("dapui")
 
     require("mason-nvim-dap").setup({
       ensure_installed = { "netcoredbg" },
