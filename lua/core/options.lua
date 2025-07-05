@@ -11,3 +11,5 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.relativenumber = true
+
+vim.opt.termguicolors = true
