@@ -13,5 +13,3 @@ vim.opt.expandtab = true
 vim.opt.relativenumber = true
 
 vim.opt.termguicolors = true
-
-vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
