@@ -8,21 +8,21 @@ return{
     vim.g.floaterm_height = 0.8
     
     -- Abre o terminal com cd no projeto
-    vim.keymap.set('n', '<F12>', function() vim.cmd('FloatermToggle --cwd="cd ' .. vim.fn.expand('%:p:h') .. '"') end, opts)
+    vim.keymap.set('n', '<leader>t', function() vim.cmd('FloatermToggle --cwd="cd ' .. vim.fn.expand('%:p:h') .. '"') end, opts)
     
     -- Fecha terminal
-    vim.keymap.set('t', '<F12>', '<C-\\><C-n><cmd>FloatermToggle<CR>')
+    vim.keymap.set('t', '<leader>tc', '<C-\\><C-n><cmd>FloatermToggle<CR>')
 
     -- Cria um novo termina
-    vim.keymap.set('t', '<F7>', '<C-\\><C-n><cmd>FloatermNew<CR>')
+    vim.keymap.set('t', '<leader>tn', '<C-\\><C-n><cmd>FloatermNew<CR>')
 
     -- Avança para o próximo terminal
-    vim.keymap.set('t', '<F9>', '<C-\\><C-n><cmd>FloatermNext<CR>')
+    vim.keymap.set('t', '<leader>tp', '<C-\\><C-n><cmd>FloatermNext<CR>')
 
     -- Volta para o terminal anterior
-    vim.keymap.set('t', '<F8>', '<C-\\><C-n><cmd>FloatermPrev<CR>')
+    vim.keymap.set('t', '<leader>ta', '<C-\\><C-n><cmd>FloatermPrev<CR>')
 
     -- Finaliza o terminal atual
-    vim.keymap.set('t', '<F10>', '<C-\\><C-n><cmd>FloatermKill<CR>')
+    vim.keymap.set('t', '<leader>tk', '<C-\\><C-n><cmd>FloatermKill<CR>')
   end,
 }
