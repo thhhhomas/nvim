@@ -33,15 +33,18 @@ return {
         capabilities = capabilities,
       })
 
-      local util = require("lspconfig/util")
-      local path = util.path
       lspconfig.pyright.setup({
         on_attach = on_attach,
         capabilities = capabilities,
-        before_init = function (_, config)
-          default_venv_path = path.join(vim.fn.getcwd(), ".venv", "bin", "python")
-          config.settings.python.pythonPath = default_venv_path
-        end,
+        settings = {
+    	  python = {
+            analysis = {
+            autoSearchPaths = true,
+            useLibraryCodeForTypes = true,
+          },
+          pythonPath = vim.g["venv_selector_virtual_env"] or vim.fn.exepath("python3"),
+          },
+        },
       })
       
       path_omnisharp = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/omnisharp/OmniSharp"
