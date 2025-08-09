@@ -25,7 +25,7 @@ return {
       require("mason").setup()
 
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyright", "omnisharp" },
+        ensure_installed = { "lua_ls", "pyright", "omnisharp", "arduino_language_server", "clangd" },
       })
 
       lspconfig.lua_ls.setup({
