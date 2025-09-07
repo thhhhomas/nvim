@@ -46,6 +46,11 @@ return {
           },
         },
       })
+
+      lspconfig.clangd.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
       
       path_omnisharp = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/omnisharp/OmniSharp"
 
