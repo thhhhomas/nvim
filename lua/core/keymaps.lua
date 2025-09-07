@@ -53,3 +53,7 @@ vim.keymap.set("n", "<leader>pc", abrir_fechar_panel_copilot, { desc = "Abrir/Fe
 -- Buffers pelo Telescope -------------------------------------------------------------------
 
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Abrir lista de buffers" })
+
+-- Copiar p/ clipboard ----------------------------------------------------------------------
+
+vim.keymap.set('v', '+y', '"+y', { noremap = true, silent = true })
