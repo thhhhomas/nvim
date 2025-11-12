@@ -17,3 +17,5 @@ require("core.keymaps")
 require("lazy").setup("plugins")
 
 vim.cmd("highlight Normal ctermbg=none guibg=none")
+
+vim.opt.termguicolors = true

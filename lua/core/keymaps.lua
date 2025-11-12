@@ -34,7 +34,7 @@ abrir_fechar_panel_copilot = function ()
     vim.cmd("Copilot panel")
 
     painel_aberto = not painel_aberto
-    vim.notify("Painel do Copilot", vim.log.levels.INFO) 
+    vim.notify("Painel do Copilot", vim.log.levels.INFO)
 
     return 
   end 
