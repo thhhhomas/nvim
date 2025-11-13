@@ -11,3 +11,5 @@ A estrutura de configuração é baseada em Lua e utiliza o `lazy.nvim` como ger
 Para alguns plugins funcionarem corretamente, é necessário que certos pacotes estejam instalados em seu sistema. A seguir estão esses programas:
 - npm
 - fd-find
+- curl
+- wget
