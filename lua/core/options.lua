@@ -13,3 +13,13 @@ vim.opt.expandtab = true
 vim.opt.relativenumber = true
 
 vim.opt.termguicolors = true
+
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '■',
+    spacing = 10,
+  },
+  severity_sort = true,
+  signs = false,
+  underline = true,
+})
