@@ -12,7 +12,13 @@ return {
 
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
-    require("nvim-tree").setup {}
+    require("nvim-tree").setup {
+      actions = {
+        open_file = {
+          quit_on_open = true,
+        },
+      },
+    }
     map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
     map('n', '<leader>0', ':NvimTreeFocus<CR>', opts)
 
