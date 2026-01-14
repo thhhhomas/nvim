@@ -57,3 +57,8 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Abrir 
 -- Copiar p/ clipboard ----------------------------------------------------------------------
 
 vim.keymap.set('v', '+y', '"+y', { noremap = true, silent = true })
+
+-- Buffer navigation ------------------------------------------------------------------------
+
+vim.keymap.set("n", "<leader>n", "<cmd>bnext<CR>", { desc = "Ir para proximo buffer" })
+vim.keymap.set("n", "<leader>d", "<cmd>bdelete<CR>", { desc = "Fechar o buffer atual" })
