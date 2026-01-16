@@ -62,3 +62,4 @@ vim.keymap.set('v', '+y', '"+y', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>n", "<cmd>bnext<CR>", { desc = "Ir para proximo buffer" })
 vim.keymap.set("n", "<leader>d", "<cmd>bdelete<CR>", { desc = "Fechar o buffer atual" })
+vim.keymap.set("n", "<leader>z", "<cmd>bprev<CR>", { desc = "Ir para buffer anterior" })
