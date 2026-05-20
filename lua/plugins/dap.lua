@@ -21,10 +21,17 @@ return{
         name = "launch - netcoredbg",
         request = "launch",
         program = function()
-          return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+          local pathDebug = vim.fn.getcwd() .. '/bin/Debug/'
+          local dirs = vim.fn.readdir(pathDebug)
+
+          return vim.fn.input('Path to dll', pathDebug .. dirs[1], 'file')
         end,
       },
     }
+
+    dapui.setup({
+
+    })
 
     vim.keymap.set("n", "<F9>", dap.toggle_breakpoint)
 
