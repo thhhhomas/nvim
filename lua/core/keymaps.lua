@@ -2,10 +2,11 @@
 
 local wk = require("which-key")
 wk.add({
-  { "<leader>c", group = " Copilot"},
-  { "<leader>f", group = " Telescope"},
+  { "<leader>c", group = " Copilot" },
+  { "<leader>f", group = " Telescope" },
   { "<leader>0", hidden = true },
-  { "<leader>d", group = " Debbuger"},
+  { "<leader>d", group = " Debbuger" },
+  { "<leader>w", group = " Diagnostic" }
 })
 
 vim.keymap.set("n", "<leader>?", function ()
@@ -71,16 +72,13 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Open buffer list" }) 
 
 -- <leader>ff -> Procurar arquivos (Find Files)
-vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find file" })
 
 -- <leader>fg -> Procurar por texto no projeto (Live Grep)
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, opts)
-
--- <leader>fb -> Listar e procurar nos buffers abertos
-vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Find word" })
 
 -- <leader>fh -> Procurar na ajuda do Neovim
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts)
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Help" })
 
 -- Copiar p/ clipboard ----------------------------------------------------------------------
 
@@ -120,3 +118,12 @@ vim.keymap.set('n', '<leader>0', ':NvimTreeFocus<CR>', { desc = "Set focus on fi
 
 vim.keymap.set("n", "<leader>vs", "<cmd>VenvSelect<cr>", { desc = "Select python virtual environment" })
 vim.keymap.set("n", "<leader>vc", "<cmd>VenvSelectCached<cr>", { desc = "Select previously python virtual environment"})
+
+-- Diagnostic ------------------------------------------------------------------------------
+
+vim.keymap.set("n", "<leader>we", "<cmd>TinyInlineDiag enable<cr>", { desc = "Enable diagnostics" })
+vim.keymap.set("n", "<leader>wd", "<cmd>TinyInlineDiag disable<cr>", { desc = "Disable diagnostics" })
+vim.keymap.set("n", "<leader>wt", "<cmd>TinyInlineDiag toggle<cr>", { desc = "Toggle diagnostics" })
+vim.keymap.set("n", "<leader>wc", "<cmd>TinyInlineDiag enable<cr><cmd>TinyInlineDiag toggle_cursor_only<cr>", { desc = "Toggle cursor-only diagnostics" })
+vim.keymap.set("n", "<leader>wr", "<cmd>TinyInlineDiag reset<cr>", { desc = "Reset diagnostic options" })
+vim.keymap.set("n", "<leader>wl", "<cmd>TinyInlineDiag enable<cr><cmd>TinyInlineDiag toggle_all_diags_on_cursorline<cr>", { desc = "Reset diagnostic options" })

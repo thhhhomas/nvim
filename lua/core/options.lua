@@ -14,12 +14,43 @@ vim.opt.relativenumber = true
 
 vim.opt.termguicolors = true
 
--- vim.diagnostic.config({
---   virtual_text = {
---     prefix = '■',
---     spacing = 10,
---   },
---   severity_sort = true,
---   signs = false,
---   underline = true,
--- })
+vim.diagnostic.config({
+  signs = { 
+    text = { 
+      [vim.diagnostic.severity.ERROR] = "●",
+      [vim.diagnostic.severity.WARN] = "●",
+      [vim.diagnostic.severity.INFO] = "●",
+      [vim.diagnostic.severity.HINT] = "●",
+    },
+  },
+  underline = true,
+  severity_sort = true,
+})
+
+vim.api.nvim_set_hl(0, "DiagnosticSignError", {
+  fg = "#ff0000",
+  bg = "NONE",
+  bold = true,
+})
+
+vim.api.nvim_set_hl(0, "DiagnosticSignWarn", {
+  fg = "#ffaa00",
+  bg = "NONE",
+  bold = true,
+})
+
+vim.api.nvim_set_hl(0, "DiagnosticSignInfo", {
+  fg = "#00aaff",
+  bg = "NONE",
+  bold = true,
+})
+
+vim.api.nvim_set_hl(0, "DiagnosticSignHint", {
+  fg = "#00ff88",
+  bg = "NONE",
+  bold = true,
+})
+
+local diag = require("tiny-inline-diagnostic")
+
+diag.disable()
