@@ -33,24 +33,6 @@ return{
 
     })
 
-    vim.keymap.set("n", "<F9>", dap.toggle_breakpoint)
-
-    vim.keymap.set("n", "<C-?>", function()
-      require("dapui").eval(nil, { enter = true })
-    end)
-
-    vim.keymap.set("n", "<F5>", dap.continue)
-    vim.keymap.set("n", "<F10>", dap.step_over)
-    vim.keymap.set("n", "<F11>", dap.step_into)
-    vim.keymap.set("n", "<S-F11>", dap.step_out)
-    vim.keymap.set("n", "<F10>", dap.step_over)
-    vim.keymap.set("n", "<F10>", dap.step_over)
-    vim.keymap.set("n", "<S-F5>", function ()
-      dap.terminate()
-      dapui.close()
-    end)
-    vim.keymap.set("n", "<C-S-F5>", dap.restart)
-
     dap.listeners.before.attach.dapui_config = function ()
       dapui.open()
     end
@@ -58,6 +40,5 @@ return{
     dap.listeners.before.launch.dapui_config = function ()
       dapui.open()
     end
-    
   end,
 }

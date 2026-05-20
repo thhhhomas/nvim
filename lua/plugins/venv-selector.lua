@@ -17,7 +17,5 @@ return {
     },
   },
   keys = {
-    { "<leader>vs", "<cmd>VenvSelect<cr>" },
-    { "<leader>vc", "<cmd>VenvSelectCached<cr>" },
   },
 }
