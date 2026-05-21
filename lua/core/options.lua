@@ -1,7 +1,3 @@
--- Definição da tecla <leader>
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- Substitui o caractere '~' no final do buffer por um espaço em branco
 vim.opt.fillchars:append({ eob = ' ' })
 
