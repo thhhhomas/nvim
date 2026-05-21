@@ -94,7 +94,7 @@ vim.keymap.set("n", "<leader>z", "<cmd>bprev<CR>", { desc = "Previous buffer" })
 
 local dap, dapui = require("dap"), require("dapui")
 
-vim.keymap.set("n", "<F9>", dap.toggle_breakpoint)
+vim.keymap.set("n", "<leader>d<F9>", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
 
 vim.keymap.set("n", "<C-?>", function()
 require("dapui").eval(nil, { enter = true })

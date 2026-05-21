@@ -44,9 +44,6 @@ return{
         program = function ()
           return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
         end,
-        args = {},
-        cwd = "${workspaceFolder}",
-        stopAtBeginningOfMainSubprogram = false,
       },
       {
         name = "Select and attach to process",
