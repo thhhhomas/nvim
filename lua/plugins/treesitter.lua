@@ -1,17 +1,15 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    branch = 'main',
+    branch = 'master',
     build = ':TSUpdate',
-    lazy = false,
     config = function()
-      require('nvim-treesitter').setup()
-      vim.api.nvim_create_autocmd('FileType', {
-        pattern = { "lua", "python", "html", "css" },
-        callback = function()
-          vim.treesitter.start()
-        end,
-      })
+      require('nvim-treesitter.configs').setup {
+        ensure_installed = { "lua", "python", "markdown", "markdown_inline", "html", "css" },
+        highlight = {
+          enable = true,
+        },
+      }
     end,
   }
 }
