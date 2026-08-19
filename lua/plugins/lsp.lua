@@ -10,7 +10,7 @@ return {
       require("mason").setup()
 
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyright", "omnisharp", "clangd" },
+        ensure_installed = { "lua_ls", "pyright", "roslyn", "clangd" },
       })
     end,
   },
